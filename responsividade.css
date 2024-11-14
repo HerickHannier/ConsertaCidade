@@ -1,14 +1,16 @@
 @media(max-width: 767.98px) {
     .popup-cadastro {
-        padding: 100%;
         top: 50%;
+        height: 100%;
+        width: 100%;
         background: #ffffff;
         border: white;
         box-shadow: none;
     }
 
     .sub-form {
-        width: 55vh;
+        margin-top: 19%;
+        width: 100%;
         height: 75vh;
         border: none;
     }
