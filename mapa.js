@@ -8,23 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
         menuPrincipal.classList.add('open');
         menuPrincipal.classList.add('slide-in');
         botaoMenuPrincipal.style.display = 'none';
-
     });
 
     // Evento para fechar o primeiro menu
     closeIconPrincipal.addEventListener('click', function () {
         menuPrincipal.classList.remove('slide-in');
         setTimeout(() => menuPrincipal.classList.remove('open'), 300);
-        botaoMenuPrincipal.style.display = 'block ';
+        botaoMenuPrincipal.style.display = 'block';
     });
-
 });
-
- // Obtenção dos elementos
- const locationSelect = document.getElementById('locationSelect');
- const extraInputs = document.getElementById('extraInputs');
-
- 
 
 document.getElementById('emailButton').addEventListener('click', sendEmail);
 
@@ -34,16 +26,14 @@ function sendEmail() {
     <section class="form">
         <form action="#" class="sub-form" id="sub">
             <div class="upper-form">
-                <br>
                 <h2 id="cc2">Solicitação</h2>
-                <label>Titulo</label><br>
+                <label>Titulo</label>
                 <input type="text" name="usuario" id="usuario">
                 <label for="locationSelect">Localização</label>
                 <select name="Localização" id="locationSelect">
                     <option value="suaLocalizacao" selected>Sua Localização</option>
                     <option value="colocarLocalizacao">Colocar endereço</option>
                 </select>
-                <!-- Inputs adicionais para localização -->
                 <div id="extraInputs" class="extra-inputs" style="display: none;">
                     <label for="latitude">Cidade:</label>
                     <input type="text" id="latitude" name="latitude">
@@ -56,36 +46,57 @@ function sendEmail() {
                 </div>
                 <label>Descrição</label>
                 <input type="text" name="senha" id="senha">
-                
-                <div class="btn">
-                   <button type="button" onclick="getLocation()" id="emailButton">Enviar</button>
-                </div>
-            </div>
-            <div class="bottom-form">
-                <div class="no-account">Precisa de ajuda?</div>
-                <a href="cadastro.html" class="signup"> Clique aqui! </a>
+                <button type="button" onclick="getLocation()" id="emailButton">Enviar</button>
+                <button id="botaofechar" onclick="fecharPopup()" class="botaofechar">Fechar</button>
             </div>
         </form>
     </section>`;
 
-    // Obtenção dos elementos após inserir o HTML
+    // Obtenção dos elementos após a criação do HTML
     const locationSelect = document.getElementById('locationSelect');
     const sub = document.getElementById('sub');
-    const cc2 = document.getElementById('cc2');
+    const pop = document.getElementById('sendEmail');
     const extraInputs = document.getElementById('extraInputs');
-
-    // Evento para monitorar mudanças no select
+    const fechar = document.getElementById('botaofechar')
+    const menu = document.getElementById('menu')
+    // Verifica mudanças no select para exibir ou ocultar inputs adicionais
     locationSelect.addEventListener('change', function() {
-        // Verifica o valor selecionado e exibe ou oculta os inputs adicionais
         if (locationSelect.value === 'colocarLocalizacao') {
-            sub.style.height = '42vw'
+            sub.style.height = '42vw';
             extraInputs.style.display = 'block';
-            
+            applyResponsiveStyles();
         } else {
             extraInputs.style.display = 'none';
-            sub.style.height = '27vw'
+            sub.style.height = '27vw';
         }
     });
+
+    // Função para aplicar estilos responsivos usando media query
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    function applyResponsiveStyles() {
+        if (locationSelect.value === 'colocarLocalizacao') {
+            if (mediaQuery.matches) {
+                // Estilos para telas pequenas
+                sub.style.height = '60vw';
+                sub.style.marginTop = '-15rem';
+                pop.style.display='flex'
+                pop.style.alignItems='center'
+                pop.style.justifyContent='center'
+                pop.style.flexDirection='column'
+                pop.style.position='absolute'
+                fechar.style.marginBottom='2%'
+                
+            } else {
+                // Estilos para telas maiores
+                extraInputs.style.display = 'none';
+                sub.style.height = '27vw';
+            }
+        }
+    }
+
+    applyResponsiveStyles();
+    mediaQuery.addEventListener("change", applyResponsiveStyles); // Monitora mudanças de largura
 }
 
 function fecharPopup() {
