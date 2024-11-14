@@ -3,15 +3,18 @@
         padding: 100%;
         top: 50%;
         background: #ffffff;
+        border: white;
+        box-shadow: none;
     }
 
     .sub-form {
         width: 55vh;
         height: 75vh;
+        border: none;
     }
 
     .form {
-        margin-top: -2rem;
+        margin-top: -9rem;
     }
 
     .menu-navegacao {
