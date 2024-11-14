@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="stylesheet" href="responsividade.css">
+    <title>Minha Localização no Google Maps</title>
+</head>
+
+<body>  
+    <!-- Primeiro botão para abrir o primeiro menu -->
+    <div class="mapa-icon" id="botao-menu-principal">
+        <img src="https://raw.githubusercontent.com/HerickHannier/DevHerickHannier/refs/heads/main/icons8-card%C3%A1pio-48.png" alt="Abrir Menu">
+    </div>
+
+    <!-- Primeiro Menu de Navegação -->
+    <div id="menu" class="menu-navegacao">
+        <img src="https://github.com/HerickHannier/DevHerickHannier/blob/main/icons8-excluir-52.png?raw=true" alt="Fechar Menu" class="close-icon">
+        <ul class="lista-navegacao">
+            <li><a href="/">INÍCIO</a></li>
+            <li><a href="/about">PERFIL</a></li>
+            <li><a href="/projects">CONTATO</a></li>
+            <li><a href="/contact">AJUDA</a></li>
+        </ul>
+    </div>
+
+    <!-- Mapa -->
+    <main>
+        <div id="mapa"></div>
+        <script>
+            const lat = localStorage.getItem("latitude");
+            const lon = localStorage.getItem("longitude");
+
+            if (lat && lon) {
+                const contentDiv = document.getElementById('mapa');
+                contentDiv.style.display = "block";
+                contentDiv.innerHTML = `<iframe src="https://maps.google.com/maps?q=${lat},${lon}&hl=pt&z=14&output=embed" width="100%" height="100%" style="border:0;"></iframe>`;
+            } else {
+                alert("Coordenadas não encontradas. Volte para a tela anterior para conceder a permissão.");
+            }
+        </script>
+
+        <!-- Segundo botão para abrir o segundo menu -->
+    <div class="mapa-icon" id="botao-menu-alternativo">
+        <button id="emailButton" class="button">Relatar um problema</button>
+    </div>
+    <div class="clear"></div>
+    <div id="sendEmail" class="popup-cadastro">
+        <p id="mensagemConfirmacao"></p>
+        <button onclick="fecharPopup()" class="botaofechar">Fechar</button>
+    </div>  
+    </main>
+
+    <script src="mapa.js"></script>
+
+    
+</body>
+
+</html>
