@@ -59,11 +59,13 @@ function sendEmail() {
     const extraInputs = document.getElementById('extraInputs');
     const fechar = document.getElementById('botaofechar')
     const menu = document.getElementById('menu')
+    const lista = document.getElementById('lista')
     // Verifica mudanças no select para exibir ou ocultar inputs adicionais
     locationSelect.addEventListener('change', function() {
         if (locationSelect.value === 'colocarLocalizacao') {
             sub.style.height = '42vw';
             extraInputs.style.display = 'block';
+            
             applyResponsiveStyles();
         } else {
             extraInputs.style.display = 'none';
@@ -77,16 +79,14 @@ function sendEmail() {
     function applyResponsiveStyles() {
         if (locationSelect.value === 'colocarLocalizacao') {
             if (mediaQuery.matches) {
-                // Estilos para telas pequenas
-                sub.style.height = '60vw';
-                sub.style.marginTop = '-15rem';
-                pop.style.display='flex'
+                sub.style.marginTop='19%'
+                sub.style.width='100%'
+                sub.style.height='100%'
+                pop.style.height='100%'
+                pop.style.width='100%'
                 pop.style.alignItems='center'
                 pop.style.justifyContent='center'
                 pop.style.flexDirection='column'
-                pop.style.position='absolute'
-                fechar.style.marginBottom='2%'
-                
             } else {
                 // Estilos para telas maiores
                 extraInputs.style.display = 'none';
