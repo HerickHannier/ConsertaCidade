@@ -19,6 +19,14 @@ main {
 
 }
 
+
+@font-face {
+    font-family: 'ChunkFive-Roman';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ChunkFive-Roman'), url('Chunkfive.woff') format('woff');
+    }
+
 a,
 li {
     text-decoration: none;
@@ -26,10 +34,83 @@ li {
     color: white;
 }
 
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+    color: var(--white);
+}
+
+:root {
+    --blue: #007BFF;
+    --black: #050505;
+    --white: #fafafa;
+    --gray: #c9c9c9;
+}
+
+/* HEADLINE SECTION PAGES */
+.headline {
+    width: 100%;
+    padding: 1.5rem 0rem 1.5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline h1 {
+    font-size: 2rem;
+}
+
+.headline span {
+    font-size: 1.3rem;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    padding: 1rem 0rem;
+    height: 90px;
+    transition: background-color 0.4s ease-in-out;
+    z-index: 10;
+}
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 1.8rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    transition: all 0.5s ease-in-out;
+}
+
+.container-header {
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-family:'ChunkFive-Roman';
+}
+
 #mapa {
     width: 80%;
-    height: 60vh;
-    margin-top: 20px;
+    height: 70vh;
+    margin-top: -27px;
     display: none;
 }
 
@@ -185,7 +266,7 @@ input {
     margin-bottom: 4%;
     margin-top: 4%;
     padding: 12px 24px;
-    width: 250px;
+    width: 297px;
     background-color: #EAEEED;
 }
 
