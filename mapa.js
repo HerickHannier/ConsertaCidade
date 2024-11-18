@@ -65,8 +65,6 @@ function sendEmail() {
         if (locationSelect.value === 'colocarLocalizacao') {
             sub.style.height = '42vw';
             extraInputs.style.display = 'block';
-            
-            applyResponsiveStyles();
         } else {
             extraInputs.style.display = 'none';
             sub.style.height = '27vw';
@@ -90,7 +88,7 @@ function sendEmail() {
             } else {
                 // Estilos para telas maiores
                 extraInputs.style.display = 'none';
-                sub.style.height = '27vw';
+                sub.style.height = '42vw';
             }
         }
     }
