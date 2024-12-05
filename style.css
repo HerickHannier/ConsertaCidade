@@ -114,7 +114,8 @@ button:hover {
 
     .sub-form {
         width: 100vw;
-        height: 122vw;
+        height: 170.8vw;
+        border-radius: 0px;
     }
 }
 
