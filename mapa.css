@@ -140,6 +140,9 @@ button {
     opacity: 0;
     transition: right 0.3s ease-out, opacity 0.3s ease-out;
     user-select: none;
+     font-size: 1.8rem;
+    z-index: 999;
+    user-select: none;
 }
 
 .open {
