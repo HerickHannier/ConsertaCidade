@@ -126,6 +126,7 @@ button {
     font-size: 1.8rem;
     z-index: 999;
     user-select: none;
+    background-color: #fffff
 }
 
 .menu-navegacao {
@@ -160,6 +161,7 @@ button {
     top: 0;
     margin-top: 1.7rem;
     margin-right: 1.6rem;
+    background-color: #fffff
 }
 
 .lista-navegacao {
