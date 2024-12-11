@@ -46,6 +46,8 @@ function sendEmail() {
                 </div>
                 <label>Descrição</label>
                 <input type="text" name="senha" id="senha">
+                <label>Selecione uma foto</label>
+                 <input type="file" id="fileInput" accept="image/*">
                 <button type="button" onclick="getLocation()" id="emailButton">Enviar</button>
                 <button id="botaofechar" onclick="fecharPopup()" class="botaofechar">Fechar</button>
             </div>
@@ -61,13 +63,13 @@ function sendEmail() {
     const menu = document.getElementById('menu')
     const lista = document.getElementById('lista')
     // Verifica mudanças no select para exibir ou ocultar inputs adicionais
-    locationSelect.addEventListener('change', function() {
+    locationSelect.addEventListener('change', function () {
         if (locationSelect.value === 'colocarLocalizacao') {
-            sub.style.height = '42vw';
+            sub.style.height = '45.8vw';
             extraInputs.style.display = 'block';
         } else {
             extraInputs.style.display = 'none';
-            sub.style.height = '27vw';
+            sub.style.height = '28vw';
         }
     });
 
@@ -77,14 +79,14 @@ function sendEmail() {
     function applyResponsiveStyles() {
         if (locationSelect.value === 'colocarLocalizacao') {
             if (mediaQuery.matches) {
-                sub.style.marginTop='19%'
-                sub.style.width='100%'
-                sub.style.height='100%'
-                pop.style.height='100%'
-                pop.style.width='100%'
-                pop.style.alignItems='center'
-                pop.style.justifyContent='center'
-                pop.style.flexDirection='column'
+                sub.style.marginTop = '19%'
+                sub.style.width = '100%'
+                sub.style.height = '100%'
+                pop.style.height = '100%'
+                pop.style.width = '100%'
+                pop.style.alignItems = 'center'
+                pop.style.justifyContent = 'center'
+                pop.style.flexDirection = 'column'
             } else {
                 // Estilos para telas maiores
                 extraInputs.style.display = 'none';
