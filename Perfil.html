@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="shortcut icon"
+        href="https://github.com/HerickHannier/ConsertaCidade/blob/main/logo%20consertacidade.png?raw=true"
+        type="image/x-icon">
+    <link rel="stylesheet" href="responsividade.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ConsertaCidade</title>
+</head>
+
+<body class="PERFIL">
+    <div class="content">
+        <header id="header" class="header">
+            <div class="container-header">
+                <div class="logo">
+                    <a href='/'>ConsertaCidade</a>
+                </div>
+                <!-- Primeiro botão para abrir o primeiro menu -->
+                <div class="menu-icon" id="botao-menu-principal">
+                    <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                </div>
+
+                <!-- Primeiro Menu de Navegação -->
+                <div id="menu" class="menu-navegacao">
+                    <i class="fa-solid fa-times close-icon" style="color: #ffffff;"></i>
+                    <ul class="lista-navegacao" id="lista">
+                        <li><a href="/">INÍCIO</a></li>
+                        <li><a href="/about">PERFIL</a></li>
+                        <li><a href="/projects">CONTATO</a></li>
+                        <li><a href="/contact">AJUDA</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="user-section">
+            <h2 class="section-title">Dados do Usuário</h2>
+            <div class="user-line"></div>
+        </div>
+        <div class="section-line"></div>
+
+        <div id="botao-menu-principal">
+            <img src="circle.png" alt="" class="Perfil-icon">
+        </div>
+
+        <form class="dados-form">
+            <div class="form-column">
+                <div class="form-group">
+                    <label class="label-dados">Nome:</label>
+                    <input type="text" class="input-dados">
+                </div>
+
+                <div class="form-group">
+                    <label class="label-dados">Nome de Usuário</label>
+                    <input type="text" class="input-dados">
+                </div>
+
+                <div class="form-group">
+                    <label class="label-dados">Nome de Usuário</label>
+                    <select name="Localização" id="locationSelect" class="input-dados">
+                    <option value="suaLocalizacao" selected>Público</option>
+                    <option value="colocarLocalizacao">Privado</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="form-column">
+                <div class="form-group">
+                    <label class="label-dados">Telefone:</label>
+                    <input type="text" class="input-dados">
+                </div>
+
+                <div class="form-group">
+                    <label class="label-dados">Email:</label>
+                    <input type="text" class="input-dados">
+                </div>
+            </div>
+        </form>
+
+            <button class="button-perfil">Relatar um problema</button>
+    
+
+
+        <script src="mapa.js"></script>
+    </div>
+</body>
