@@ -1,12 +1,22 @@
-body {
+.MAPA {
     background-image: url("https://conexaobancadamineira.com.br/wp-content/uploads/2024/01/Uberlandia.jpg");
     height: 100vh;
     margin: 0;
     padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
-
 }
+
+.MAPA::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com opacidade */
+    z-index: 1;
+  }
 
 main {
     margin: 0;
@@ -19,13 +29,18 @@ main {
 
 }
 
+p,
+h1,a{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 @font-face {
     font-family: 'ChunkFive-Roman';
     font-style: normal;
     font-weight: normal;
     src: local('ChunkFive-Roman'), url('Chunkfive.woff') format('woff');
-    }
+}
 
 a,
 li {
@@ -104,7 +119,7 @@ li {
 
 .logo {
     font-size: 2.2rem;
-    font-family:'ChunkFive-Roman';
+    font-family: 'ChunkFive-Roman';
 }
 
 #mapa {
@@ -196,11 +211,16 @@ button {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 2;
-    width: 400px; /* Largura do pop-up */
-    max-height: 70vh; /* Altura máxima do pop-up */
-    overflow-y: auto; /* Ativa a rolagem vertical */
-    scrollbar-width: thin; /* Define uma barra de rolagem fina */
-    scrollbar-color: #007BFF #f1f1f1; /* Cor do polegar e do fundo */
+    width: 400px;
+    /* Largura do pop-up */
+    max-height: 70vh;
+    /* Altura máxima do pop-up */
+    overflow-y: auto;
+    /* Ativa a rolagem vertical */
+    scrollbar-width: thin;
+    /* Define uma barra de rolagem fina */
+    scrollbar-color: #007BFF #f1f1f1;
+    /* Cor do polegar e do fundo */
 }
 
 .popup-cadastro p {
@@ -220,7 +240,7 @@ button {
     margin-top: 10px;
 }
 
-.botaofechar{
+.botaofechar {
     background-color: #005ec2;
     color: #ffffff;
     border: none;
@@ -314,7 +334,7 @@ button:hover {
     opacity: 0.8;
 }
 
-.no-account{
+.no-account {
     margin-top: -10%;
 }
 
@@ -338,3 +358,134 @@ select:focus {
     display: none;
     margin-top: 10px;
 }
+/* PERFIL*/
+.PERFIL {
+    background-image: url("https://conexaobancadamineira.com.br/wp-content/uploads/2024/01/Uberlandia.jpg");
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.PERFIL::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com opacidade */
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2; /* Fica acima da película preta */
+
+    padding: 20px;
+  }
+
+.user-section {
+    text-align: center;
+    width: 300px;
+  }
+
+  .user-line {
+    width: 50%;
+    height: 5px;
+    margin-left: 25%;
+    background-color: #036bda; /* azul claro */
+  }
+  
+  .section-title {
+    color: #ffffff; /* Azul semelhante ao da imagem */
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .section-line {
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0; /* Cinza claro */
+  }
+
+  .Perfil-icon{
+    width: 8%;
+    height: 8%;
+    margin-top: 3%;
+    margin-left: 4%;
+    font-size: 1.8rem;
+    z-index: 999;
+    user-select: none;
+}
+
+/* Formulário principal */
+.dados-form {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between; /* Espaça as colunas igualmente */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Cada coluna do formulário */
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    width: 43%; /* Ocupa 48% do espaço para criar duas colunas */
+  }
+  
+  /* Grupo de rótulo e entrada */
+  .form-group {
+    margin-bottom: 10px; /* Espaçamento entre os campos */
+    position: relative; /* Para ícones de edição */
+  }
+  
+  /* Estilo do rótulo */
+  .label-dados {
+
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: -10px;
+    display: block;
+  }
+  
+  /* Estilo do input */
+  .input-dados {
+    width: 80%;
+    border: 3px solid #005ec2;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .form-group::after {
+    content: url('editar\ \(3\).png');
+    position: absolute;
+    right: 15%; /* Alinha o ícone à direita */
+    top: 66%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #005ec2;
+    cursor: pointer;
+  }
+
+  .button-perfil{   
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    outline: none;
+    border-width: 8;
+    background-color: #005ec2;
+    font-weight: 600;
+    width: 15%;
+    margin-top: -2%;
+    margin-left: 40%;
+  }
+  
+  
