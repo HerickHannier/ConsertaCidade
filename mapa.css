@@ -14,9 +14,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com opacidade */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fundo preto com opacidade */
     z-index: 1;
-  }
+}
 
 main {
     margin: 0;
@@ -30,7 +31,8 @@ main {
 }
 
 p,
-h1,a{
+h1,
+a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -211,23 +213,18 @@ button {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 2;
-    width: 400px;
-    /* Largura do pop-up */
-    max-height: 70vh;
-    /* Altura máxima do pop-up */
-    overflow-y: auto;
-    /* Ativa a rolagem vertical */
-    scrollbar-width: thin;
-    /* Define uma barra de rolagem fina */
-    scrollbar-color: #007BFF #f1f1f1;
-    /* Cor do polegar e do fundo */
+    width: 57vh;
+    height: 70vh;
+    max-height: 70vh; /* Altura máxima do pop-up */
+    overflow-y: auto; /* Ativa a rolagem vertical */
+    scrollbar-width: thin; /* Define uma barra de rolagem fina */
+    scrollbar-color: #007BFF #f1f1f1; /* Cor do polegar e do fundo */
 }
 
 .popup-cadastro p {
     margin: 0;
     font-size: 18px;
-    color: #000000;
-    /* cor das letras */
+    color: #000000; /* cor das letras */
 }
 
 .popup-cadastro button {
@@ -262,8 +259,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25vw;
-    height: 28vw;
+    width: 91vw;
+    height: 83vh;
     border-radius: 12px;
     box-shadow: rgba(50, 50, 93, 0, 25)0px 13px 27px -5px,
         rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -358,10 +355,11 @@ select:focus {
     display: none;
     margin-top: 10px;
 }
+
 /* PERFIL*/
 .PERFIL {
     background-image: url("https://conexaobancadamineira.com.br/wp-content/uploads/2024/01/Uberlandia.jpg");
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-size: cover;
@@ -375,43 +373,48 @@ select:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com opacidade */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fundo preto com opacidade */
     z-index: 1;
-  }
+}
 
-  .content {
+.content {
     position: relative;
-    z-index: 2; /* Fica acima da película preta */
+    z-index: 2;
+    /* Fica acima da película preta */
 
     padding: 20px;
-  }
+}
 
 .user-section {
     text-align: center;
     width: 300px;
-  }
+}
 
-  .user-line {
+.user-line {
     width: 50%;
     height: 5px;
     margin-left: 25%;
-    background-color: #036bda; /* azul claro */
-  }
-  
-  .section-title {
-    color: #ffffff; /* Azul semelhante ao da imagem */
+    background-color: #036bda;
+    /* azul claro */
+}
+
+.section-title {
+    color: #ffffff;
+    /* Azul semelhante ao da imagem */
     font-size: 16px;
     margin-bottom: 5px;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .section-line {
+}
+
+.section-line {
     width: 100%;
     height: 2px;
-    background-color: #e0e0e0; /* Cinza claro */
-  }
+    background-color: #e0e0e0;
+    /* Cinza claro */
+}
 
-  .Perfil-icon{
+.Perfil-icon {
     width: 8%;
     height: 8%;
     margin-top: 3%;
@@ -425,35 +428,39 @@ select:focus {
 .dados-form {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    justify-content: space-between; /* Espaça as colunas igualmente */
+    justify-content: space-between;
+    /* Espaça as colunas igualmente */
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  /* Cada coluna do formulário */
-  .form-column {
+}
+
+/* Cada coluna do formulário */
+.form-column {
     display: flex;
     flex-direction: column;
-    width: 43%; /* Ocupa 48% do espaço para criar duas colunas */
-  }
-  
-  /* Grupo de rótulo e entrada */
-  .form-group {
-    margin-bottom: 10px; /* Espaçamento entre os campos */
-    position: relative; /* Para ícones de edição */
-  }
-  
-  /* Estilo do rótulo */
-  .label-dados {
+    width: 43%;
+    /* Ocupa 48% do espaço para criar duas colunas */
+}
+
+/* Grupo de rótulo e entrada */
+.form-group {
+    margin-bottom: 10px;
+    /* Espaçamento entre os campos */
+    position: relative;
+    /* Para ícones de edição */
+}
+
+/* Estilo do rótulo */
+.label-dados {
 
     color: white;
     font-size: 1.3rem;
     margin-bottom: -10px;
     display: block;
-  }
-  
-  /* Estilo do input */
-  .input-dados {
+}
+
+/* Estilo do input */
+.input-dados {
     width: 80%;
     border: 3px solid #005ec2;
     border-radius: 5px;
@@ -461,20 +468,21 @@ select:focus {
     font-size: 1em;
     color: #000;
     background-color: rgba(255, 255, 255, 0.9);
-  }
+}
 
-  .form-group::after {
+.form-group::after {
     content: url('editar\ \(3\).png');
     position: absolute;
-    right: 15%; /* Alinha o ícone à direita */
+    right: 15%;
+    /* Alinha o ícone à direita */
     top: 66%;
     transform: translateY(-50%);
     font-size: 1.2em;
     color: #005ec2;
     cursor: pointer;
-  }
+}
 
-  .button-perfil{   
+.button-perfil {
     border-radius: 5px;
     color: white;
     cursor: pointer;
@@ -486,6 +494,4 @@ select:focus {
     width: 15%;
     margin-top: -2%;
     margin-left: 40%;
-  }
-  
-  
+}
