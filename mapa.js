@@ -65,11 +65,11 @@ function sendEmail() {
     // Verifica mudanças no select para exibir ou ocultar inputs adicionais
     locationSelect.addEventListener('change', function () {
         if (locationSelect.value === 'colocarLocalizacao') {
-            sub.style.height = '45.8vw';
+            sub.style.height = '133vh';
             extraInputs.style.display = 'block';
         } else {
             extraInputs.style.display = 'none';
-            sub.style.height = '28vw';
+            sub.style.height = '83vh';
         }
     });
 
@@ -90,7 +90,7 @@ function sendEmail() {
             } else {
                 // Estilos para telas maiores
                 extraInputs.style.display = 'none';
-                sub.style.height = '42vw';
+                sub.style.height = '83vh';
             }
         }
     }
