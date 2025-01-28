@@ -1,0 +1,521 @@
+.MAPA {
+    background-image: url("https://conexaobancadamineira.com.br/wp-content/uploads/2024/01/Uberlandia.jpg");
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.MAPA::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fundo preto com opacidade */
+    z-index: 1;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+p,
+h1,
+a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@font-face {
+    font-family: 'ChunkFive-Roman';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ChunkFive-Roman'), url('Chunkfive.woff') format('woff');
+}
+
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+    color: var(--white);
+}
+
+:root {
+    --blue: #007BFF;
+    --black: #050505;
+    --white: #fafafa;
+    --gray: #c9c9c9;
+}
+
+/* HEADLINE SECTION PAGES */
+.headline {
+    width: 100%;
+    padding: 1.5rem 0rem 1.5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline h1 {
+    font-size: 2rem;
+}
+
+.headline span {
+    font-size: 1.3rem;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    padding: 1rem 0rem;
+    height: 90px;
+    transition: background-color 0.4s ease-in-out;
+    z-index: 10;
+}
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 1.8rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    transition: all 0.5s ease-in-out;
+}
+
+.container-header {
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-family: 'ChunkFive-Roman';
+}
+
+#mapa {
+    width: 80%;
+    height: 70vh;
+    margin-top: -27px;
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+
+.menu-icon {
+    font-size: 1.8rem;
+    z-index: 999;
+    user-select: none;
+}
+
+.menu-navegacao {
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    background-color: #005ec2;
+    z-index: 99999;
+    display: block;
+    opacity: 0;
+    transition: right 0.3s ease-out, opacity 0.3s ease-out;
+    user-select: none;
+}
+
+.open {
+    right: 0;
+    opacity: 1;
+}
+
+.slide-in {
+    right: 0;
+    opacity: 1;
+}
+
+.close-icon {
+    user-select: none;
+    position: absolute;
+    font-size: 2.2rem;
+    right: 0;
+    top: 0;
+    margin-top: 1.7rem;
+    margin-right: 1.6rem;
+}
+
+.lista-navegacao {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: -8%;
+}
+
+.lista-navegacao li {
+    font-size: 2.5rem;
+    transition: all.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.popup-cadastro {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #007BFF;
+    padding: 20px;
+    border: 2px solid #005ec2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    width: 57vh;
+    height: 68vh;
+    max-height: 70vh;
+    /* Altura máxima do pop-up */
+    overflow-y: auto;
+    /* Ativa a rolagem vertical */
+    scrollbar-width: thin;
+    /* Define uma barra de rolagem fina */
+    scrollbar-color: #007BFF #f1f1f1;
+    /* Cor do polegar e do fundo */
+}
+
+.popup-cadastro p {
+    margin: 0;
+    font-size: 18px;
+    color: #000000;
+    /* cor das letras */
+}
+
+.popup-cadastro button {
+    background-color: #005ec2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botaofechar {
+    background-color: #005ec2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+
+.form {
+    margin-top: -2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.sub-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 91vw;
+    height: 60vh;
+    border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0, 25)0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: white;
+}
+
+h2 {
+    margin: 1.5rem 0 2rem 0;
+    text-align: center;
+}
+
+label {
+    padding-left: 16px;
+    opacity: 6.75;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+input {
+    display: flex;
+    border-radius: 50px;
+    border-style: none;
+    outline: none;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    padding: 12px 24px;
+    width: 297px;
+    background-color: #EAEEED;
+}
+
+input:focus {
+    opacity: 8.7;
+}
+
+button {
+    padding: 12px 48px;
+    border-radius: 5px;
+    color: white;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-width: 8;
+    background-color: #005ec2;
+    font-weight: 600;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 8.8;
+}
+
+.bottom-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.signup {
+    padding-left: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #21d4fd;
+    margin-top: -10%;
+}
+
+.signup:hover {
+    opacity: 0.8;
+}
+
+.no-account {
+    margin-top: -10%;
+}
+
+select {
+    display: flex;
+    border-radius: 50px;
+    border-style: none;
+    outline: none;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 12px 24px;
+    width: 300px;
+    background-color: #EAEEED;
+}
+
+select:focus {
+    opacity: 8.7;
+}
+
+.extra-inputs {
+    display: none;
+    margin-top: 10px;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* PERFIL*/
+.PERFIL {
+    background-image: url("https://conexaobancadamineira.com.br/wp-content/uploads/2024/01/Uberlandia.jpg");
+    height: 133vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.PERFIL::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 133vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Fundo preto com opacidade */
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    /* Fica acima da película preta */
+
+    padding: 20px;
+}
+
+.user-section {
+    text-align: center;
+    width: 300px;
+}
+
+.user-line {
+    width: 50%;
+    height: 5px;
+    margin-left: 25%;
+    background-color: #036bda;
+    /* azul claro */
+}
+
+.section-title {
+    color: #ffffff;
+    /* Azul semelhante ao da imagem */
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-line {
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0;
+    /* Cinza claro */
+}
+
+.imageavatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Perfil-icon {
+    width: 8%;
+    height: 8%;
+    margin-top: 3%;
+    font-size: 1.8rem;
+    z-index: 999;
+    margin-right: 2.3%;
+    user-select: none;
+}
+
+/* Formulário principal */
+.dados-form {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    /* Espaça as colunas igualmente */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6.5%;
+    padding: 20px;
+}
+
+/* Cada coluna do formulário */
+.form-column {
+    display: flex;
+    flex-direction: column;
+    width: 43%;
+    /* Ocupa 48% do espaço para criar duas colunas */
+}
+
+/* Grupo de rótulo e entrada */
+.form-group {
+    margin-bottom: 10px;
+    /* Espaçamento entre os campos */
+    position: relative;
+    /* Para ícones de edição */
+}
+
+/* Estilo do rótulo */
+.label-dados {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: -10px;
+    display: block;
+}
+
+/* Estilo do input */
+.input-dados {
+    width: 80%;
+    border: 3px solid #005ec2;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group::after {
+    content: url('https://github.com/HerickHannier/ConsertaCidade/blob/main/editar%20(3).png?raw=true');
+    position: absolute;
+    right: 15%;
+    /* Alinha o ícone à direita */
+    top: 66%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #005ec2;
+    cursor: pointer;
+}
+
+.button-perfil {
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    outline: none;
+    border-width: 8;
+    background-color: #005ec2;
+    font-weight: 600;
+    width: 15%;
+    margin-top: -2%;
+    margin-left: 42%;
+}
+
+
+.olho {
+    cursor: pointer;  
+    position: absolute;
+    width: 37px;
+    left: 74%;
+    /* Alinha o ícone à direita */
+    top: 64%;
+    transform: translateY(-50%);
+    background-color: rgba(235, 234, 234, 0.9);
+}
